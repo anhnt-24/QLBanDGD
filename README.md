@@ -50,5 +50,5 @@
 
 ### 📸 Giao diện minh họa
 
-<img src="./public/assets/image copy.png" width="600"/>
-<img src="./public/assets/image.png" width="600"/>
+<img src="public/assets/image copy.png" width="600"/>
+<img src="public/assets/image.png" width="600"/>

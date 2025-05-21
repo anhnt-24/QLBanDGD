@@ -1,54 +1,54 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# 🏠 Web Bán Hàng Đồ Gia Dụng
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Web Bán Hàng Đồ Gia Dụng** là hệ thống website thương mại điện tử được phát triển với **Spring Boot** cho backend và **ReactJS** cho frontend. Dự án hỗ trợ đầy đủ các chức năng phục vụ quá trình bán hàng, từ quản lý sản phẩm đến xử lý đơn hàng và thanh toán.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Công nghệ sử dụng
 
-## Expanding the ESLint configuration
+### 🔧 Backend – Spring Boot
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Java 21+
+- Spring Boot 3.x
+- Spring Security (xác thực & phân quyền)
+- Spring Data JPA (kết nối cơ sở dữ liệu)
+- RESTful API
+- JWT Authentication
+- PostgreSQL
 
-- Configure the top-level `parserOptions` property like this:
+### 💻 Frontend – ReactJS
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- React 19+
+- React Router
+- Axios (gọi API)
+- Tailwind CSS (giao diện hiện đại, responsive)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🌟 Tính năng chính
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-=======
-# QLBanDGD
->>>>>>> ce34f052401fcb1d50507d6bf6e37e52ac217619
+### 👤 Dành cho người dùng (khách hàng)
+
+- 🔍 Xem danh mục và chi tiết sản phẩm
+- 🧭 Tìm kiếm, lọc theo loại và giá
+- 🛒 Thêm sản phẩm vào giỏ hàng
+- 💳 Đặt hàng và thanh toán
+- 📜 Xem lịch sử đơn hàng
+- 🔐 Đăng ký / Đăng nhập
+
+### 🛠️ Dành cho quản trị viên
+
+- 🗂️ Quản lý danh mục (thêm / sửa / xóa)
+- 📦 Quản lý sản phẩm (thêm / sửa / xóa)
+- 📬 Quản lý đơn hàng (xác nhận, hủy, cập nhật trạng thái)
+- 👥 Quản lý người dùng
+- 📊 Thống kê doanh thu và sản phẩm bán chạy
+
+---
+
+> 💡 Dự án này phù hợp cho việc học tập và phát triển các kỹ năng lập trình fullstack với React và Spring Boot.
+
+### 📸 Giao diện minh họa
+
+<img src="./public/assets/image copy.png" width="600"/>
+<img src="./public/assets/image.png" width="600"/>

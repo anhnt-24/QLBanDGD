@@ -1,5 +1,5 @@
 import { ChildrenPropsType } from "@/types";
-import { Input as InputANTD, message, Select, Upload } from "antd";
+import { Input as InputANTD, message, Rate, Select, Upload } from "antd";
 import { Form } from "antd";
 function Input({
   children,
@@ -19,6 +19,8 @@ function Input({
   if (type === "Select") Component = Select;
   if (type === "TextArea") Component = InputANTD.TextArea;
   if (type === "Upload") Component = Upload;
+  if (type === "Rate") Component = Rate;
+
   let Rules: any = [];
   if (rules) Rules = [...rules];
   if (required) Rules = [...Rules, { required: true, message: "Bắt buộc." }];

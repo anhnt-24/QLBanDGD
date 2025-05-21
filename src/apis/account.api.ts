@@ -1,5 +1,5 @@
 import { Account, GoogleAuthenRequest } from "./../types/Account/type.account";
-import { ApiResponse, RegisterRequest } from "@/types";
+import { ApiResponse } from "@/types";
 import { http, instance } from "../config";
 import { LoginResponse } from "@/types/Account/type.account";
 

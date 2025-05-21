@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { PagingRequest } from "@/types/Pageable/Pageable.types";
 import { Popconfirm } from "antd";
 import { toast } from "react-toastify";
-import { PencilLine, Trash2 } from "lucide-react";
+import { FileText, PencilLine, Trash2 } from "lucide-react";
 import AddProductModal from "./src/AddProductModal";
 import { deleteProductById, getAllProduct } from "@/apis/product.api";
 import DeleteProductModal from "./src/DeleteProductModal";
@@ -15,6 +15,7 @@ import { Outlet } from "react-router";
 import { Link } from "@/components";
 import { useTableFilter } from "@/hooks/useTableFilter";
 import { useTableSearch } from "@/hooks/useTableSearch";
+import ProductDescriptionEditor from "../ProductDescription";
 
 function ProductAdmin() {
   const { filter, setFilter, handleTableChange } =
@@ -154,6 +155,9 @@ function ProductAdmin() {
           >
             <PencilLine color="green" size={18} />
           </button>
+          <Link to={`/admin/product-description/${row.id}`}>
+            <FileText className="text-primary" size={18} />
+          </Link>
           <Popconfirm
             placement="left"
             title="Chuyển vào thùng rác"

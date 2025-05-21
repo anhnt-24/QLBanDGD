@@ -1,4 +1,7 @@
 @import "tailwindcss";
+
+@import "react-markdown-editor-lite/lib/index.css";
+
 @custom-variant dark (&:where(.dark, .dark *));
 @theme {
   --color-primary: #3bb8f6;

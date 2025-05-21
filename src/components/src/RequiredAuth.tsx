@@ -5,7 +5,6 @@ const RequireAuth = ({ allowedRoles }: { allowedRoles: string[] }) => {
   const { auth } = useAuth();
   const location = useLocation();
 
-  return <Outlet />;
   return allowedRoles.includes(auth?.role || "") ? (
     <Outlet />
   ) : auth?.name ? (

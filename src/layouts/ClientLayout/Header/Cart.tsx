@@ -49,14 +49,15 @@ function Cart() {
       dropdownRender={() => (
         <div className="relative w-98 translate-y-1 rounded-xs bg-white p-2 pb-15 shadow-xs shadow-gray-300">
           <h4 className="mb-2 text-sm">Sản phẩm mới thêm</h4>
+
           <ul className="min-h-60">
             {products.map((product) => (
               <li className="hover:border-l-primary hover b block h-15 border-b-1 border-l-2 border-gray-300 border-l-transparent py-0.5 pl-2 hover:bg-gray-50">
-                <Link to="/cart">
-                  <div className="flex w-[100%]">
+                <Link to={`/product/${product.id}`}>
+                  <div className="flex w-[100%] items-center">
                     <img
                       src={product.thumbnail || ""}
-                      className="w-[20%] object-contain"
+                      className="h-10 w-[20%] object-contain"
                       alt=""
                     />
                     <div className="ml-2">

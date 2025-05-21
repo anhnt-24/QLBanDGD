@@ -1,4 +1,4 @@
-import { http } from "@/config";
+import { http, instance } from "@/config";
 import { ApiResponse } from "@/types";
 import { PagingRequest, PagingResponse } from "@/types/Pageable/Pageable.types";
 import { Product, ProductFilter } from "@/types/Product/Product.type";
@@ -42,21 +42,21 @@ export const getAllProduct = (
   );
 
 export const createProduct = (productRequest: FormData) =>
-  http.post<ApiResponse<Product>>("/product/create", productRequest);
+  instance.post<ApiResponse<Product>>("/product/create", productRequest);
 
 export const getProductById = (id: string) =>
   http.get<ApiResponse<Product>>(`/product/get/${id}`);
 
 export const updateProduct = (productRequest: FormData) =>
-  http.put<ApiResponse<Product>>(`/product/update`, productRequest);
+  instance.put<ApiResponse<Product>>(`/product/update`, productRequest);
 
 export const deleteProductById = (id: string, isDeleted: boolean) =>
-  http.delete<ApiResponse<String>>(`/product/delete/${id}/${isDeleted}`);
+  instance.delete<ApiResponse<String>>(`/product/delete/${id}/${isDeleted}`);
 
 export const deleteProductByListID = (listId: string[], isDeleted: boolean) =>
-  http.delete<ApiResponse<String>>(`/product/delete/${isDeleted}`, {
+  instance.delete<ApiResponse<String>>(`/product/delete/${isDeleted}`, {
     data: listId,
   });
 
 export const restoreProductByListId = (listId: String[]) =>
-  http.put<ApiResponse<String>>("/product/restore", listId);
+  instance.put<ApiResponse<String>>("/product/restore", listId);

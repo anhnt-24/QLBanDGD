@@ -54,6 +54,7 @@ function Chat({ senderId }: ChildrenPropsType) {
     const { data, isLoading } = useQuery({
       queryKey: ["messages", filter],
       queryFn: () => getAllChatMessage(filter),
+      staleTime: Infinity,
     });
 
     const contents = data?.data.data?.contents;

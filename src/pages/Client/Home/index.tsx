@@ -1,16 +1,12 @@
-import { Carousel } from "antd";
 import CategoryList from "./src/CategoryList";
 import ProminentCategories from "./src/ProminentCategories";
-import RecentViews from "./src/RecentViews";
 import SliderShow from "./src/Slider";
 import SuggestedProducts from "./src/SuggestedProducts";
 import SliderShow2 from "./src/SliderShow2";
 import { getAllCategory } from "@/apis/category.apis";
-import { Link } from "@/components";
 import { CategoryFilter } from "@/types/Category/Category.type";
 import { PagingRequest } from "@/types/Pageable/Pageable.types";
 import { useQuery } from "@tanstack/react-query";
-import { Filter, MenuIcon } from "lucide-react";
 import { useState } from "react";
 
 function HomePage() {

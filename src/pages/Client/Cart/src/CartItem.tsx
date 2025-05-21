@@ -78,7 +78,7 @@ function CartItem({ data, setCartItems }: ChildrenPropsType) {
     return (
       <div className="relative mt-4 flex h-30 justify-between border-b-1 border-gray-200">
         <div className="flex h-20 gap-2">
-          <img src={data.thumbnail} className="w-35" alt="" />
+          <img src={data.thumbnail} className="w-35 object-contain" alt="" />
           <div>
             <p>{data.name}</p>
             <Tag color="orange">-20%</Tag>

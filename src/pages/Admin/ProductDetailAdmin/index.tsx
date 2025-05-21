@@ -13,7 +13,7 @@ function ProductDetailAdmin() {
       queryKey: ["getProductById", id],
       queryFn: () => getProductById(id || ""),
     });
-    const product = data?.data.data;
+    const product = data?.data?.data;
 
     const categoryData = useQuery({
       queryKey: ["getCategoryById", product?.categoryId],

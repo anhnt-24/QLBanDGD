@@ -37,7 +37,7 @@ function TableAdminProduct({
         <h3>{title}</h3>
         {toTrashBin && (
           <Link className="text-red-500" to={toTrashBin}>
-            Thùng rác ({countTrash})
+            Thùng rác
           </Link>
         )}
         {toList && (

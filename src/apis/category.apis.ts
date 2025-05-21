@@ -1,5 +1,5 @@
 // services/categoryApi.ts
-import { http } from "@/config";
+import { http, instance } from "@/config";
 import { Category, CategoryFilter } from "../types/Category/Category.type";
 import { ApiResponse } from "@/types";
 import { PagingRequest, PagingResponse } from "@/types/Pageable/Pageable.types";
@@ -14,24 +14,24 @@ export const getAllCategory = (
   );
 
 export const createCategory = (categoryRequest: FormData) =>
-  http.post<ApiResponse<Category>>("/category/create", categoryRequest);
+  instance.post<ApiResponse<Category>>("/category/create", categoryRequest);
 
 export const getCategoryById = (id: string) =>
   http.get<ApiResponse<Category>>(`/category/get/${id}`);
 
 export const updateCategory = (categoryRequest: FormData) =>
-  http.put<ApiResponse<Category>>(`/category/update`, categoryRequest);
+  instance.put<ApiResponse<Category>>(`/category/update`, categoryRequest);
 
 export const deleteCategoryById = (id: string, isDeleted: boolean) =>
-  http.delete<ApiResponse<String>>(`/category/delete/${id}/${isDeleted}`);
+  instance.delete<ApiResponse<String>>(`/category/delete/${id}/${isDeleted}`);
 
 export const deleteCategoryByListID = (listId: string[], isDeleted: boolean) =>
-  http.delete<ApiResponse<String>>(`/category/delete/${isDeleted}`, {
+  instance.delete<ApiResponse<String>>(`/category/delete/${isDeleted}`, {
     data: listId,
   });
 
 export const restoreCategoryByListId = (listId: String[]) =>
-  http.put<ApiResponse<String>>("/category/restore", listId);
+  instance.put<ApiResponse<String>>("/category/restore", listId);
 
 export const getAllCategoryForSelect = () =>
-  http.get<ApiResponse<Search[]>>("/category/select");
+  instance.get<ApiResponse<Search[]>>("/category/select");

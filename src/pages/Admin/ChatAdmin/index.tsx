@@ -38,10 +38,10 @@ function ChatAdmin() {
     senderId: senderId,
     receiverId: receiver?.id,
   });
-  console.log(receiver);
   const { data, isLoading } = useQuery({
     queryKey: ["messages", filter],
     queryFn: () => getAllChatMessage(filter),
+    staleTime: Infinity,
   });
   const contents = data?.data.data?.contents;
   const paging = data?.data.data?.paging;
@@ -153,6 +153,7 @@ function ChatAdmin() {
               </Badge>
               <h3>{receiver?.name}</h3>
             </div>
+
             <div
               className="my-2 flex max-h-140 min-h-140 flex-col gap-4 overflow-auto px-6 py-2"
               ref={chatbox}
@@ -200,6 +201,7 @@ function ChatAdmin() {
                 <Paperclip />
               </button>
               <TextArea
+                {...{ disabled: !!!receiver }}
                 value={message.message}
                 onChange={(e) => {
                   setMessage((prev) => ({
@@ -222,6 +224,7 @@ function ChatAdmin() {
                 <Images />
               </button>
               <Button
+                {...{ disabled: !!!receiver }}
                 onClick={handleSendMessage}
                 variant="solid"
                 color="primary"

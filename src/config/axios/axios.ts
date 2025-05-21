@@ -1,3 +1,4 @@
+import { refresh } from "@/apis/account.api";
 import axios from "axios";
 
 export const http = axios.create({
@@ -14,9 +15,6 @@ export const ngrok = axios.create({
 });
 
 export const instance = axios.create({
-  headers: {
-    "Content-Type": "application/json",
-  },
   baseURL: "http://localhost:8080/api/v1/",
   withCredentials: true,
   timeout: 5000,
@@ -42,10 +40,12 @@ instance.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        const response = await axios.post("/auth/refresh");
-        const { token } = response.data;
-        localStorage.setItem("token", token);
-        originalRequest.headers.Authorization = `Bearer ${token}`;
+        const response = await refresh();
+        const token = response?.data?.data?.token;
+        if (token) {
+          localStorage.setItem("token", token);
+          originalRequest.headers.Authorization = `Bearer ${token}`;
+        }
         return axios(originalRequest);
       } catch (error) {}
     }

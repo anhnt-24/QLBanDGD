@@ -110,7 +110,6 @@ function Cart() {
         } else if (paymentMethod === "VNPAY" && order.data.data) {
           const redirectUrl =
             (await createPayment(order.data.data)).data.data || "";
-          console.log(redirectUrl);
           window.location.href = redirectUrl;
         }
       }

@@ -28,7 +28,7 @@ function ProminentCategories({ data }: ChildrenPropsType) {
         })) || [];
 
       console.log(first5Items);
-      setFilter((prev) => ({ ...prev, categoryId: first5Items[0].key }));
+      setFilter((prev) => ({ ...prev, categoryId: first5Items[0]?.key }));
       setItems(first5Items);
     }
   }, []);

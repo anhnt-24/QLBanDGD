@@ -24,11 +24,14 @@ import VnpayReturn from "./pages/Client/VnPayReturn/index.tsx";
 import OrderClient from "./pages/Client/Order/index.tsx";
 import OrderDetailClient from "./pages/Client/OrderDetail/index.tsx";
 import CustomerDetailAdmin from "./pages/Admin/CustomerDetailAdmin/index.tsx";
+import ProductDescriptionEditor from "./pages/Admin/ProductDescription/index.tsx";
+import ScrollToTop from "./components/src/ScrollTop.tsx";
 
 function App() {
   return (
     <>
       <ToastReceiver />
+      <ScrollToTop></ScrollToTop>
       <Routes>
         <Route element={<PublicRoute />}>
           <Route path="/auth" element={<AuthLayout />}>
@@ -49,6 +52,11 @@ function App() {
             <Route path="product" element={<ProductAdmin />}>
               <Route path=":id" element={<ProductDetailAdmin />}></Route>
             </Route>
+            <Route
+              path="product-description/:id"
+              element={<ProductDescriptionEditor />}
+            ></Route>
+
             <Route path="category" element={<CategoryAdmin />}></Route>
             <Route path="order" element={<OrderAdmin />}>
               <Route path=":id" element={<OrderDetailAdmin />}></Route>

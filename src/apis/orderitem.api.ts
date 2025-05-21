@@ -1,4 +1,4 @@
-import { http } from "@/config";
+import { http, instance } from "@/config";
 import { ApiResponse } from "@/types";
 import { PagingRequest, PagingResponse } from "@/types/Pageable/Pageable.types";
 import {
@@ -11,7 +11,7 @@ export const createOrderItem = (orderItemRequest: OrderItem) =>
   http.post<ApiResponse<OrderItem>>("/order-item/create", orderItemRequest);
 
 export const updateOrderItem = (orderItemRequest: OrderItemUpdate) =>
-  http.put<ApiResponse<OrderItem>>("/order-item/update", orderItemRequest);
+  instance.put<ApiResponse<OrderItem>>("/order-item/update", orderItemRequest);
 
 export const getAllOrderItems = (
   searchRequest: PagingRequest<OrderItemFilter>,
